@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+# Projeto: Formulário de Cadastro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação web desenvolvida com **React** e **TypeScript**, com o objetivo de estruturar um formulário de cadastro funcional e escalável.
 
-Currently, two official plugins are available:
+## 🛠️ Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://react.dev/) — Biblioteca para construção de interfaces
+- [TypeScript](https://www.typescriptlang.org/) — Superset do JavaScript com tipagem estática
+- [Vite](https://vitejs.dev/) — Ferramenta de build rápida e moderna
+- [CSS Modules] — Estilização modular e reutilizável
 
-## React Compiler
+## 📦 Estrutura do Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+src/
+├── components/
+│   ├── form/
+│   │   ├── Form.tsx
+│   │   └── Form.module.css
+│   └── buttons/
+│       ├── ButtonRegister.tsx
+│       └── button-register.css
+├── App.tsx
+├── main.tsx
+└── index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ✨ Funcionalidades
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Estrutura inicial de formulário com campos prontos para expansão
+- Botão de cadastro com estilização básica
+- Organização modular para facilitar manutenção e escalabilidade
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Como Executar
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/TiagoLeopoldo/sistema-de-cadastro-de-usuarios-em-react.git
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+
+4. Acesse em `http://localhost:5173`
+
+## 📂 Branches
+
+- `main`: branch principal
+- `sandbox`: branch de testes e desenvolvimento inicial
+
+## 📌 Observações
+
+Este projeto está em fase inicial e serve como base para futuras implementações. A estrutura foi pensada para facilitar a evolução do código com clareza e organização.
+
+## 🧠 Autor
+
+Desenvolvido por **Tiago de Noronha Leopoldo**, com foco em aprendizado, boas práticas e evolução contínua.
+
+---
+
+Se você gostou do projeto, sinta-se à vontade para contribuir ou deixar uma estrela ⭐ no repositório!
 ```
