@@ -1,8 +1,13 @@
 import "./button-register.css";
 
-const ButtonRegister = () => {
+interface ButtonRegisterProps {
+  onClick?: () => void;
+
+}
+
+const ButtonRegister = ({onClick}: ButtonRegisterProps) => {
   return (
-    <button>Cadastrar</button>
+    <button onClick={onClick}>Cadastrar</button>
   )
 }
 

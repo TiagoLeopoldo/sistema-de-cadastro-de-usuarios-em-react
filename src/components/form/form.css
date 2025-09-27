@@ -7,16 +7,43 @@ section {
   padding: 2rem;
   background-color: #f9f9f9;
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 label {
   display: flex;
   flex-direction: column;
   font-weight: bold;
+  gap: 0.25rem;
 }
 
 input {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.erro {
+  color: #d93025;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.sucesso {
+  color: #0f9d58;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+input.erro-input {
+  border-color: #d93025;
 }
