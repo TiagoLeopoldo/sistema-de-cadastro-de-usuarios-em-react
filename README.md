@@ -66,4 +66,3 @@ Desenvolvido por **Tiago de Noronha Leopoldo**, com foco em aprendizado, boas pr
 ---
 
 Se você gostou do projeto, sinta-se à vontade para contribuir ou deixar uma estrela ⭐ no repositório!
-```
