@@ -7,7 +7,7 @@ Este projeto é uma aplicação web desenvolvida com **React** e **TypeScript**,
 - [React](https://react.dev/) — Biblioteca para construção de interfaces
 - [TypeScript](https://www.typescriptlang.org/) — Superset do JavaScript com tipagem estática
 - [Vite](https://vitejs.dev/) — Ferramenta de build rápida e moderna
-- **CSS Modules** — Estilização modular e reutilizável
+- **CSS Modules + CSS tradicional** — Estilização modular e reutilizável com foco em simplicidade
 
 ## 📦 Estrutura do Projeto
 
@@ -16,7 +16,10 @@ src/
 ├── components/
 │   ├── form/
 │   │   ├── Form.tsx
-│   │   └── Form.module.css
+│   │   └── form.css
+│   ├── user-list/
+│   │   ├── UserList.tsx
+│   │   └── user-list.css
 │   └── buttons/
 │       ├── ButtonRegister.tsx
 │       └── button-register.css
@@ -27,11 +30,12 @@ src/
 
 ## ✨ Funcionalidades
 
-- Validação de campos obrigatórios com mensagens de erro específicas
-- Feedback visual de sucesso após envio do formulário
-- Botão de cadastro com estado desabilitado quando necessário
-- Estilo limpo e responsivo com foco em usabilidade
-- Organização modular para facilitar manutenção e expansão futura
+- ✅ Validação de campos obrigatórios com mensagens de erro específicas
+- ✅ Feedback visual de sucesso após envio do formulário
+- ✅ Lista de usuários cadastrados exibida dinamicamente
+- ✅ Mensagem de aviso quando não há usuários cadastrados
+- ✅ Tipagem forte com `interface Formulario` compartilhada entre componentes
+- ✅ Uso correto de `key` em listas para renderização eficiente
 
 ## 🚀 Como Executar
 
@@ -59,7 +63,20 @@ src/
 
 ## 📌 Observações
 
-Este projeto está em fase de construção. A próxima etapa será adicionar uma lista de usuários cadastrados dinamicamente após o envio do formulário.
+Este projeto está em constante evolução. As últimas melhorias incluíram:
+
+- Integração entre `Form.tsx` e `App.tsx` via props
+- Criação da função `adicionarUsuario` para atualizar o estado global
+- Implementação do componente `UserList.tsx` com renderização condicional
+- Estilização completa do `user-list.css` seguindo o padrão visual do projeto
+- Ajustes de tipagem com `import type` para conformidade com TypeScript moderno
+
+Próximos passos sugeridos:
+
+- Persistência de dados com `localStorage`
+- Remoção de usuários da lista
+- Filtros por cidade ou idade
+- Exportação de dados para CSV
 
 ## 🧠 Autor
 
