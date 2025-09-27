@@ -22,7 +22,7 @@ src/
 │       └── button-register.css
 ├── App.tsx
 ├── main.tsx
-└── index.css
+└── App.css
 ```
 
 ## ✨ Funcionalidades
