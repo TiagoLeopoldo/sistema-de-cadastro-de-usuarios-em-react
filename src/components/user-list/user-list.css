@@ -1,0 +1,41 @@
+.user-list {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.user-empty {
+  text-align: center;
+  font-size: 1rem;
+  color: #888;
+  padding: 1rem;
+}
+
+.user-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-list li {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.user-list li:last-child {
+  border-bottom: none;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.user-details {
+  font-size: 0.95rem;
+  color: #555;
+}

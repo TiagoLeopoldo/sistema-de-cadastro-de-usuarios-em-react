@@ -2,15 +2,19 @@ import { useState } from "react";
 import "./form.css";
 import ButtonRegister from "../buttons/ButtonRegister";
 
-interface Formulario {
+export interface Formulario {
   nome: string;
   email: string;
   idade: string;
   cidade: string
 }
 
+interface FormProps {
+  onAddUser: (usuario: Formulario) => void;
+}
 
-const Form = () => {
+
+const Form = ({onAddUser}: FormProps) => {
   const [camposDeFormulario, setCamposDeFormulario] = useState<Formulario>({
     nome: '',
     email: '',
@@ -27,7 +31,7 @@ const Form = () => {
 
   const [formularioValido, setFormularioValido] = useState(false);
 
-  const handleSubmit = () => {
+  const fazerCadastro = () => {
     const novosErros: { [campo: string]: string } = {};
 
     if (!camposDeFormulario.nome.trim()) {
@@ -50,6 +54,8 @@ const Form = () => {
 
     if (Object.keys(novosErros).length === 0) {
       setFormularioValido(true);
+      onAddUser(camposDeFormulario);
+      setCamposDeFormulario({nome: '', email: '', idade: '', cidade: ''});
     } else {
       setFormularioValido(false);
     }
@@ -74,7 +80,7 @@ const Form = () => {
         Cidade <input className={erros.nome ? "erro-input" : ""} id="cidade" placeholder="Cidade onde reside" type="text" name="cidade" value={camposDeFormulario.cidade} onChange={(e) => setCamposDeFormulario({ ...camposDeFormulario, cidade: e.target.value })} />
         {erros.cidade && <span className="erro">{erros.cidade}</span>}
       </label>
-      <ButtonRegister onClick={handleSubmit} />
+      <ButtonRegister onClick={fazerCadastro} />
       {formularioValido && <p className="sucesso">Formulário enviado com sucesso!</p>}
 
     </section>
