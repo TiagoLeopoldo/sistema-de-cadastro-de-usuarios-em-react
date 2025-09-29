@@ -5,7 +5,7 @@ interface UserListProps {
   usuarios: Formulario[]
 }
 
-function UserList({ usuarios }: UserListProps) {
+const UserList = ({ usuarios }: UserListProps) => {
   return (
     <section className="user-list">
       {usuarios.length === 0 ? (
@@ -19,4 +19,4 @@ function UserList({ usuarios }: UserListProps) {
   )
 }
 
-export default UserList
+export default UserList;
