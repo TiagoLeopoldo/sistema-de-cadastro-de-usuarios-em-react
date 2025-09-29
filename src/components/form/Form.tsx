@@ -31,7 +31,7 @@ const Form = ({onAddUser}: FormProps) => {
 
   const [formularioValido, setFormularioValido] = useState(false);
 
-  const fazerCadastro = () => {
+  const handleSubmit = () => {
     const novosErros: { [campo: string]: string } = {};
 
     if (!camposDeFormulario.nome.trim()) {
@@ -80,7 +80,7 @@ const Form = ({onAddUser}: FormProps) => {
         Cidade <input className={erros.nome ? "erro-input" : ""} id="cidade" placeholder="Cidade onde reside" type="text" name="cidade" onChange={(e) => setCamposDeFormulario({ ...camposDeFormulario, cidade: e.target.value })} />
         {erros.cidade && <span className="erro">{erros.cidade}</span>}
       </label>
-      <ButtonRegister onClick={fazerCadastro} />
+      <ButtonRegister onClick={handleSubmit} />
       {formularioValido && <p className="sucesso">Formulário enviado com sucesso!</p>}
 
     </section>
