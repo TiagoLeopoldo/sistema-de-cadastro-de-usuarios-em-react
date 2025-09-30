@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./form.css";
 import ButtonRegister from "../buttons/ButtonRegister";
 
@@ -12,9 +12,11 @@ export interface Formulario {
 interface FormProps {
   onAddUser: (usuario: Formulario) => void;
   usuarios: Formulario[];
+  usuarioEditando?: Formulario | null;
+  onCancelEdit?: () => void;
 }
 
-const Form = ({ onAddUser, usuarios }: FormProps) => {
+const Form = ({ onAddUser, usuarios, usuarioEditando, onCancelEdit }: FormProps) => {
   const [camposDeFormulario, setCamposDeFormulario] = useState<Formulario>({
     nome: '',
     email: '',
@@ -31,6 +33,14 @@ const Form = ({ onAddUser, usuarios }: FormProps) => {
 
   const [formularioValido, setFormularioValido] = useState(false);
 
+  useEffect(() => {
+    if (usuarioEditando) {
+      setCamposDeFormulario(usuarioEditando);
+      setErros({});
+      setFormularioValido(false);
+    }
+  }, [usuarioEditando]);
+
   const handleSubmit = () => {
     const novosErros: { [campo: string]: string } = {};
 
@@ -42,7 +52,9 @@ const Form = ({ onAddUser, usuarios }: FormProps) => {
       novosErros.email = "Informe seu email.";
     } else {
       const emailJaExiste = usuarios.some(
-        (usuario) => usuario.email.toLowerCase() === camposDeFormulario.email.toLowerCase()
+        (usuario) =>
+          usuario.email.toLowerCase() === camposDeFormulario.email.toLowerCase() &&
+          usuarioEditando?.email !== camposDeFormulario.email
       );
 
       if (emailJaExiste) {
@@ -83,7 +95,7 @@ const Form = ({ onAddUser, usuarios }: FormProps) => {
 
   return (
     <section>
-      <h1>Cadastro de Usuários</h1>
+      <h1>{usuarioEditando ? "Editar Usuário" : "Cadastro de Usuários"}</h1>
 
       <label htmlFor="nome">
         Nome
@@ -108,6 +120,7 @@ const Form = ({ onAddUser, usuarios }: FormProps) => {
           placeholder="seu-email@exemplo.com.br"
           type="email"
           name="email"
+          disabled={!!usuarioEditando}
           onChange={(e) => setCamposDeFormulario({ ...camposDeFormulario, email: e.target.value })}
         />
         {erros.email && <span className="erro">{erros.email}</span>}
@@ -142,6 +155,11 @@ const Form = ({ onAddUser, usuarios }: FormProps) => {
       </label>
 
       <ButtonRegister onClick={handleSubmit} />
+      {usuarioEditando && (
+        <button type="button" onClick={onCancelEdit} className="button-register">
+          Cancelar edição
+        </button>
+      )}
       {formularioValido && <p className="sucesso">Formulário enviado com sucesso!</p>}
     </section>
   );
