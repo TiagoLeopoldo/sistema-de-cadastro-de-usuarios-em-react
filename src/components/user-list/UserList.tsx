@@ -1,13 +1,15 @@
 import './user-list.css';
 import type { Formulario } from '../form/Form';
 import ButtonRemove from '../buttons/ButtonRemove';
+import ButtonEdit from '../buttons/ButtonEdit';
 
 interface UserListProps {
   usuarios: Formulario[];
   onRemoveUser: (email: string) => void;
+  onEditUser: (usuario: Formulario) => void;
 }
 
-const UserList = ({ usuarios, onRemoveUser }: UserListProps) => {
+const UserList = ({ usuarios, onRemoveUser, onEditUser }: UserListProps) => {
   return (
     <section className="user-list">
       {usuarios.length === 0 ? (
@@ -23,6 +25,7 @@ const UserList = ({ usuarios, onRemoveUser }: UserListProps) => {
                 <p className="user-details">{usuario.cidade}</p>
               </div>
               <div className="user-actions">
+                <ButtonEdit onClick={() => onEditUser(usuario)} />
                 <ButtonRemove onClick={() => onRemoveUser(usuario.email)} />
               </div>
             </li>
@@ -33,4 +36,4 @@ const UserList = ({ usuarios, onRemoveUser }: UserListProps) => {
   );
 };
 
-export default UserList;
+export default UserList
