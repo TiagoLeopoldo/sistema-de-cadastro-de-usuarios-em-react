@@ -34,7 +34,7 @@ function App() {
   return (
     <>
       <main>
-        <Form onAddUser={adicionarUsuario} />
+        <Form onAddUser={adicionarUsuario} usuarios={usuarios} />
         <UserList usuarios={usuarios} onRemoveUser={removerUsuario} />
       </main>
     </>
