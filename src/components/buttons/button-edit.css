@@ -1,0 +1,21 @@
+.button-edit {
+  background-color: #f4b400;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.button-edit:hover {
+  background-color: #db9e00;
+}
+
+@media (max-width: 600px) {
+  .button-edit {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+}

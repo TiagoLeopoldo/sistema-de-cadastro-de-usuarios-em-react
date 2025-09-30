@@ -1,6 +1,7 @@
 import './user-list.css';
 import type { Formulario } from '../form/Form';
 import ButtonRemove from '../buttons/ButtonRemove';
+import ButtonEdit from '../buttons/ButtonEdit';
 
 interface UserListProps {
   usuarios: Formulario[];
@@ -23,6 +24,7 @@ const UserList = ({ usuarios, onRemoveUser }: UserListProps) => {
                 <p className="user-details">{usuario.cidade}</p>
               </div>
               <div className="user-actions">
+                <ButtonEdit onClick={() => console.log('Editar', usuario.email)} />
                 <ButtonRemove onClick={() => onRemoveUser(usuario.email)} />
               </div>
             </li>
