@@ -40,18 +40,30 @@ const Form = ({ onAddUser, usuarios }: FormProps) => {
 
     if (!camposDeFormulario.email.trim()) {
       novosErros.email = "Informe seu email.";
-    }
+    } else {
+      const emailJaExiste = usuarios.some(
+        (usuario) => usuario.email.toLowerCase() === camposDeFormulario.email.toLowerCase()
+      );
 
-    const emailJaExiste = usuarios.some(
-      (usuario) => usuario.email.toLowerCase() === camposDeFormulario.email.toLowerCase()
-    );
+      if (emailJaExiste) {
+        novosErros.email = "Este email já está cadastrado.";
+      }
 
-    if (emailJaExiste) {
-      novosErros.email = "Este email já cadastrado.";
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const emailValido = emailRegex.test(camposDeFormulario.email);
+
+      if (!emailValido) {
+        novosErros.email = "Email inválido. Deve conter '@' e '.'";
+      }
     }
 
     if (!camposDeFormulario.idade.trim()) {
       novosErros.idade = "Informe sua idade.";
+    } else {
+      const idadeConvertida = parseInt(camposDeFormulario.idade);
+      if (isNaN(idadeConvertida) || idadeConvertida <= 0) {
+        novosErros.idade = "Idade deve ser maior que zero.";
+      }
     }
 
     if (!camposDeFormulario.cidade.trim()) {
