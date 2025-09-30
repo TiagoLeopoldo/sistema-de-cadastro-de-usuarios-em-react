@@ -3,6 +3,8 @@ import './App.css';
 import Form from './components/form/Form';
 import UserList from './components/user-list/UserList'
 import type { Formulario } from './components/form/Form';
+import UserCounter from './components/user-counter/UserCounter';
+
 
 function App() {
   const [usuarios, setUsuarios] = useState<Formulario[]>(() => {
@@ -35,6 +37,7 @@ function App() {
     <>
       <main>
         <Form onAddUser={adicionarUsuario} usuarios={usuarios} />
+        <UserCounter usuarios={usuarios} />
         <UserList usuarios={usuarios} onRemoveUser={removerUsuario} />
       </main>
     </>

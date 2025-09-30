@@ -1,7 +1,8 @@
 .user-list {
   max-width: 400px;
-  margin: 2rem auto;
+  width: 100%;
   padding: 2rem;
+  margin: 0 auto;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -21,12 +22,21 @@
 }
 
 .user-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
   border-bottom: 1px solid #e0e0e0;
 }
 
 .user-list li:last-child {
   border-bottom: none;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .user-name {
@@ -38,4 +48,26 @@
 .user-details {
   font-size: 0.95rem;
   color: #555;
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .user-list {
+    padding: 1rem;
+  }
+
+  .user-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .user-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
