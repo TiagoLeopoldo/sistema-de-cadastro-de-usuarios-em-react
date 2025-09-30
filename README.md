@@ -1,6 +1,7 @@
 # Projeto: Formulário de Cadastro
 
-Este projeto é uma aplicação web desenvolvida com **React** e **TypeScript**, com o objetivo de estruturar um formulário de cadastro funcional, validado e escalável.
+Este projeto é uma aplicação web desenvolvida com **React** e **TypeScript**, com o objetivo de estruturar um formulário de cadastro funcional,
+visando a conclusão da **Atividade: Sistema de Cadastro de Usuários em React** do curso de **Front-end da Estartando Dev's** .
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -46,17 +47,20 @@ src/
 
 ## Como Executar
 
-1. Clone o repositório:  
+1. Clone o repositório:
+
    ```bash
    git clone https://github.com/TiagoLeopoldo/sistema-de-cadastro-de-usuarios-em-react.git
    ```
 
-2. Instale as dependências:  
+2. Instale as dependências:
+
    ```bash
    npm install
    ```
 
-3. Inicie o servidor de desenvolvimento:  
+3. Inicie o servidor de desenvolvimento:
+
    ```bash
    npm run dev
    ```
@@ -65,26 +69,26 @@ src/
 
 ## Branches
 
-- `main`: branch principal  
+- `main`: branch principal
 - `sandbox`: branch de testes e desenvolvimento inicial
 
 ## Observações
 
 Este projeto está em constante evolução. As últimas melhorias incluíram:
 
-- Validação avançada de email com regex  
-- Verificação de idade válida  
-- Integração entre `Form.tsx` e `App.tsx` via props  
-- Criação da função `adicionarUsuario` para atualizar o estado global  
-- Implementação do componente `UserList.tsx` com renderização condicional  
-- Estilização completa do `user-list.css` seguindo o padrão visual do projeto  
-- Persistência de dados com `localStorage`  
+- Validação avançada de email com regex
+- Verificação de idade válida
+- Integração entre `Form.tsx` e `App.tsx` via props
+- Criação da função `adicionarUsuario` para atualizar o estado global
+- Implementação do componente `UserList.tsx` com renderização condicional
+- Estilização completa do `user-list.css` seguindo o padrão visual do projeto
+- Persistência de dados com `localStorage`
 - Remoção de usuários com botão dedicado
 
 Próximos passos sugeridos:
 
-- Implementar botão de edição de usuários  
-- Adicionar campo de busca para filtrar usuários  
+- Implementar botão de edição de usuários
+- Adicionar campo de busca para filtrar usuários
 - Construir contador de usuários geral, maiores e menores de idade
 
 Desenvolvido por **Tiago de Noronha Leopoldo**, com foco em aprendizado, boas práticas e evolução contínua.
