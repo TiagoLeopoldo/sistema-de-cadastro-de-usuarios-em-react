@@ -5,29 +5,37 @@ import UserList from './components/user-list/UserList'
 import type { Formulario } from './components/form/Form';
 
 function App() {
-    const [usuarios, setUsuarios] = useState<Formulario[]>([]);
+  const [usuarios, setUsuarios] = useState<Formulario[]>(() => {
+    const dadosSalvos = localStorage.getItem("usuarios");
+    return dadosSalvos ? JSON.parse(dadosSalvos) : [];
+  });
 
-    useEffect(() => {
-      localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    }, [usuarios]);
 
-    useEffect(() => {
-      const dadosSalvos = localStorage.getItem("usuarios");
-      if (dadosSalvos) {
-        const usuariosConvertidos: Formulario[] = JSON.parse(dadosSalvos);
-        setUsuarios(usuariosConvertidos);
-      }
-    }, [])
+  useEffect(() => {
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  }, [usuarios]);
 
-    const adicionarUsuario = (novoUsuario: Formulario) => {
-      setUsuarios([...usuarios, novoUsuario]);
-    };
+  useEffect(() => {
+    const dadosSalvos = localStorage.getItem("usuarios");
+    if (dadosSalvos) {
+      const usuariosConvertidos: Formulario[] = JSON.parse(dadosSalvos);
+      setUsuarios(usuariosConvertidos);
+    }
+  }, [])
 
+  const adicionarUsuario = (novoUsuario: Formulario) => {
+    setUsuarios([...usuarios, novoUsuario]);
+  };
+
+  const removerUsuario = (email: string) => {
+    const novaLista = usuarios.filter((usuario) => usuario.email !== email);
+    setUsuarios(novaLista);
+  }
   return (
     <>
       <main>
-        <Form onAddUser={adicionarUsuario}/>
-        <UserList usuarios={usuarios}/>
+        <Form onAddUser={adicionarUsuario} />
+        <UserList usuarios={usuarios} onRemoveUser={removerUsuario} />
       </main>
     </>
   )

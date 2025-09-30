@@ -65,19 +65,19 @@ const Form = ({onAddUser}: FormProps) => {
     <section>
       <h1>Cadastro de Usuários</h1>
       <label htmlFor="nome">
-        Nome <input className={erros.nome ? "erro-input" : ""} id="nome" placeholder="Seu nome" type="text" name="nome" onChange={(e) => setCamposDeFormulario({ ...camposDeFormulario, nome: e.target.value })} />
+        Nome <input className={erros.email ? "erro-input" : ""} id="nome" placeholder="Seu nome" type="text" name="nome" value={camposDeFormulario.nome} onChange={(e) => setCamposDeFormulario({ ...camposDeFormulario, nome: e.target.value })} />
         {erros.nome && <span className="erro">{erros.nome}</span>}
       </label>
       <label htmlFor="email">
-        E-mail <input className={erros.nome ? "erro-input" : ""} id="email" placeholder="seu-email@exemplo.com.br" type="email" name="email" onChange={(e) => setCamposDeFormulario({ ...camposDeFormulario, email: e.target.value })}/>
+        E-mail <input className={erros.nome ? "erro-input" : ""} id="email" placeholder="seu-email@exemplo.com.br" type="email" name="email" value={camposDeFormulario.email} onChange={(e) => setCamposDeFormulario({ ...camposDeFormulario, email: e.target.value })}/>
         {erros.email && <span className="erro">{erros.email}</span>}
       </label>
       <label htmlFor="idade">
-        Idade <input className={erros.nome ? "erro-input" : ""} id="idade" placeholder="Sua idade" type="number" name="idade" onChange={(e) => setCamposDeFormulario({ ...camposDeFormulario, idade: e.target.value })} />
+        Idade <input className={erros.nome ? "erro-input" : ""} id="idade" placeholder="Sua idade" type="number" name="idade" value={camposDeFormulario.idade} onChange={(e) => setCamposDeFormulario({ ...camposDeFormulario, idade: e.target.value })} />
         {erros.idade && <span className="erro">{erros.idade}</span>}
       </label>
       <label htmlFor="cidade">
-        Cidade <input className={erros.nome ? "erro-input" : ""} id="cidade" placeholder="Cidade onde reside" type="text" name="cidade" onChange={(e) => setCamposDeFormulario({ ...camposDeFormulario, cidade: e.target.value })} />
+        Cidade <input className={erros.nome ? "erro-input" : ""} id="cidade" placeholder="Cidade onde reside" type="text" name="cidade" value={camposDeFormulario.cidade} onChange={(e) => setCamposDeFormulario({ ...camposDeFormulario, cidade: e.target.value })} />
         {erros.cidade && <span className="erro">{erros.cidade}</span>}
       </label>
       <ButtonRegister onClick={handleSubmit} />
