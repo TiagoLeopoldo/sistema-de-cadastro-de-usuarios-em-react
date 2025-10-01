@@ -1,7 +1,6 @@
 # Projeto: Formulário de Cadastro
 
-Este projeto é uma aplicação web desenvolvida com **React** e **TypeScript**, com o objetivo de estruturar um formulário de cadastro funcional,
-visando a conclusão da **Atividade: Sistema de Cadastro de Usuários em React** do curso de **Front-end da Estartando Dev's** .
+Este projeto é uma aplicação web desenvolvida com **React** e **TypeScript**, com o objetivo de estruturar um formulário de cadastro funcional, visando a conclusão da **Atividade: Sistema de Cadastro de Usuários em React** do curso de **Front-end da Estartando Dev's**.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -20,9 +19,13 @@ src/
 │   ├── user-list/
 │   │   ├── UserList.tsx
 │   │   └── user-list.css
+│   ├── user-counter/
+│   │   ├── UserCounter.tsx
+│   │   └── user-counter.css
 │   └── buttons/
 │       ├── ButtonRegister.tsx
 │       ├── ButtonRemove.tsx
+│       ├── ButtonEdit.tsx
 │       └── button-register.css
 ├── App.tsx
 ├── main.tsx
@@ -40,10 +43,13 @@ src/
 - ✅ Lista de usuários cadastrados exibida dinamicamente
 - ✅ Mensagem de aviso quando não há usuários cadastrados
 - ✅ Remoção de usuários da lista com botão dedicado
+- ✅ Edição de usuários com preenchimento automático do formulário
+- ✅ Botão “Atualizar” e “Cancelar edição” no modo de edição
 - ✅ Persistência de dados com `localStorage`
+- ✅ Contador de usuários cadastrados, maiores e menores de idade
 - ✅ Tipagem forte com `interface Formulario` compartilhada entre componentes
 - ✅ Uso correto de `key` em listas para renderização eficiente
-- ✅ Componentização dos botões de ação (`Cadastrar` e `Remover`)
+- ✅ Componentização dos botões de ação (`Cadastrar`, `Remover`, `Editar`)
 
 ## Como Executar
 
@@ -84,13 +90,12 @@ Este projeto está em constante evolução. As últimas melhorias incluíram:
 - Estilização completa do `user-list.css` seguindo o padrão visual do projeto
 - Persistência de dados com `localStorage`
 - Remoção de usuários com botão dedicado
+- Implementação do botão de edição com preenchimento automático
+- Criação do componente `UserCounter` com contagem total, maiores e menores de idade
 
-Próximos passos sugeridos:
+Próximo passo:
 
-- Implementar botão de edição de usuários
-- Adicionar campo de busca para filtrar usuários
-- Construir contador de usuários geral, maiores e menores de idade
+- Adicionar campo de busca para filtrar usuários dinamicamente
 
 Desenvolvido por **Tiago de Noronha Leopoldo**, com foco em aprendizado, boas práticas e evolução contínua.
 
----
